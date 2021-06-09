@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            /* border: 1px solid black; */
+            margin: 20px;
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+            background-color: aliceblue;
+        }
+        #header{
+            margin: 30px;
+            text-align: center;
+        }
+        #more{
+            margin: 10px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <p class="fs-2" id="header">Did you just bought MX Master 3 with MagSpeed™ Electromagnetic scrolling and want to try? GO FOR IT!!</p>
+    <div id="content" class="fs-5"></div>
+
+    <button id="more" type="button" class="btn btn-danger">GIVE ME MORE!</button>
+
+    <script>
+        function doSomething() {
+            console.log('hi');
+        }
+        document.getElementById("content").addEventListener("scroll", doSomething);
+        document.getElementById('more').addEventListener('click', () => {
+            fetch('https://baconipsum.com/api/?type=all-meat&paras=5000&start-with-lorem=1&format=html').then(res => {
+            res.text().then(text => {
+                let longtext = ''
+                for (let i=0;i<10;i++) {
+                    longtext += text
+                }
+                document.getElementById('content').innerHTML += longtext
+            })
+        })
+        })
+        fetch('https://baconipsum.com/api/?type=all-meat&paras=5000&start-with-lorem=1&format=html').then(res => {
+            res.text().then(text => {
+                let longtext = ''
+                for (let i=0;i<20;i++) {
+                    longtext += text
+                }
+                document.getElementById('content').innerHTML = longtext
+            })
+        })
+        
+
+    </script>
+
+</body>
+
+</html>
