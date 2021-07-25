@@ -1,8 +1,7 @@
-import Head from 'next/head'
-import { useState } from 'react'
-import { Button } from 'semantic-ui-react'
-import styles from '../styles/Home.module.css'
-import getLongText from '../utils/text'
+import Head from "next/head"
+import { useState } from "react"
+import styles from "../styles/Home.module.css"
+import getLongText from "../utils/text"
 
 export default function Home() {
 	const [text, setText] = useState(getLongText(20))
@@ -21,13 +20,13 @@ export default function Home() {
 			</Head>
 			<div className={styles.main}>
 				<h1 className={styles.headerText}>
-					Did you just bought MX Master 3 with MagSpeed™ Electromagnetic scrolling and want to try? GO FOR
-					IT!!
+					Did you just bought MX Master 3 with MagSpeed™ Electromagnetic
+					scrolling and want to try? GO FOR IT!!
 				</h1>
 				<div className={styles.scrollText}>{text}</div>
-				<Button basic color="red" content="Red" onClick={moreText}>
+				<button className="ui red basic button" onClick={moreText}>
 					GIVE ME MORE!!
-				</Button>
+				</button>
 			</div>
 		</div>
 	)
