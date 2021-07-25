@@ -1,0 +1,22 @@
+.main {
+  /* padding: 5rem 0; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerText {
+  margin-bottom: 2vh;
+}
+
+.scrollText {
+  width: 95vw;
+  height: 85vh;
+  overflow: scroll;
+  background-color: aliceblue;
+  margin-bottom: 2vh;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-indent: 50px;
+}
